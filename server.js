@@ -10,12 +10,14 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 
 
-app.get('/todos',()=>{
-    knex.select().from('todos')
-    .then((todos)=>{
-        res.send(todos)
-    })
-})
+app.get("/todos", (req, res) => {
+  knex
+    .select()
+    .from("todos")
+    .then( (todos) => {
+      res.send(todos);
+    });
+});
 
 app.get("/todos/:id", (req, res) => {
   knex.select()
